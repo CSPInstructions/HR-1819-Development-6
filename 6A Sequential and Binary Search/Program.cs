@@ -31,7 +31,7 @@ namespace searchalgos {
             int endIndex = numbers.Length - 1;
 
             // Keep the algoritm going as long as the startIndex is smaller then the endIndex
-            while (startIndex < endIndex) {
+            while (startIndex <= endIndex) {
                 // Get the number in the middle of the current range
                 int middleIndex = (startIndex + endIndex) / 2;
 
@@ -42,21 +42,23 @@ namespace searchalgos {
                 }
 
                 // Check whether the targetnumber is smaller then the current center
-                if (numberToFind < numbers[middleIndex]) {
+                else if (numberToFind < numbers[middleIndex]) {
                     // Move the endindex to the current center
                     endIndex = middleIndex - 1;
                 }
 
-                // The number has been found, return the current center index
-                return middleIndex;
+                // The number has been found
+                else {
+                    // return the current center index
+                    return middleIndex;
+                }
             }
 
             // The number hasn't been found, return -1
             return -1;
         }
 
-        static void Main(string[] args)
-        {
+        static void Main(string[] args) {
             // Create three arrays to check the algorithms 
             int[] numbersCollectionOne   = {1, 3, 5, 7, 9};
             int[] numbersCollectionTwo   = {4, 5, 6, 9};
@@ -69,7 +71,7 @@ namespace searchalgos {
 
             // Execute the binary search
             int binser1 = binarySearch(numbersCollectionOne, 5);
-            int binser2 = binarySearch(numbersCollectionTwo, 5);
+            int binser2 = binarySearch(numbersCollectionTwo, 9);
 
             // Print the results of both algorithms
             Console.WriteLine(seqserAr1 + " " + seqserAr2 + " " + seqserAr3);
