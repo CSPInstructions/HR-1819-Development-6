@@ -10,13 +10,13 @@ namespace Sorting_Algoritms {
         // Insertion sort orders the numbers one by one, in order
         static void insertionSort( int[] list ) {
             // We loop over the items in the array using indexes, we start at one because the first item can't be compared to anything before it
-            for ( int indexBeingSorted = 1; indexBeingSorted < list.Length; indexBeingSorted = indexBeingSorted + 1 ) {
+            for ( int justIndex = 1; justIndex < list.Length; justIndex = justIndex + 1 ) {
                 // We save the number that we are trying to get into the right position
-                int numberBeingSorted = list[indexBeingSorted];
+                int numberBeingSorted = list[justIndex];
 
                 // We define the index of the number before the one we're trying to get to the right position
                 // This will be used to compare the numbers before the one we're sorting
-                int orderListIndex = indexBeingSorted - 1;
+                int orderListIndex = justIndex - 1;
 
                 // We enter a loop that runs as long as the number before the one we're sorting is greater then the one we're sorting
                 // The loops also quites when we reach the start of the array
